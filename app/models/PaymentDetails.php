@@ -1,7 +1,5 @@
 <?php
 
-use Payum\YiiExtension\Model\PaymentDetails as BasePaymentDetails;
-
-class PaymentDetails  extends BasePaymentDetails
+class PaymentDetails  extends \Payum\Core\Model\ArrayObject
 {
-} 
+}

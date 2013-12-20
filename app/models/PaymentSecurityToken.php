@@ -1,7 +1,5 @@
 <?php
 
-use Payum\YiiExtension\Model\PaymentSecurityToken as BasePaymentSecurityToken;
-
-class PaymentSecurityToken  extends BasePaymentSecurityToken
+class PaymentSecurityToken extends \Payum\Core\Model\Token
 {
 }

@@ -2,7 +2,7 @@
 use Buzz\Client\Curl;
 use Payum\Paypal\ExpressCheckout\Nvp\Api;
 use Payum\Paypal\ExpressCheckout\Nvp\PaymentFactory;
-use Payum\Storage\FilesystemStorage;
+use Payum\Core\Storage\FilesystemStorage;
 
 Yii::setPathOfAlias(
     'Payum.YiiExtension',
@@ -217,7 +217,7 @@ $mainConfig = array(
     'components' => array(
         'payum' => array(
             'class' => '\Payum\YiiExtension\PayumComponent',
-            'tokenStorage' => new FilesystemStorage(__DIR__.'/../data', 'Payum\Model\Token', 'hash'),
+            'tokenStorage' => new FilesystemStorage(__DIR__.'/../data', 'PaymentSecurityToken', 'hash'),
             'payments' => array(
                 'paypal' => PaymentFactory::create(new Api(new Curl(), array(
                     'username' => 'testrj_1312968849_biz_api1.remixjobs.com',
@@ -225,21 +225,9 @@ $mainConfig = array(
                     'signature' => 'Azgw.f7NYjBAlDQEpbI1D06D4ACAAXfoVSV7k4JUuGAPRHzhDbQR2r90',
                     'sandbox' => true
                 ))),
-                'paypal-active-record-storage' => PaymentFactory::create(new Api(new Curl(), array(
-                    'username' => 'testrj_1312968849_biz_api1.remixjobs.com',
-                    'password' => '1312968888',
-                    'signature' => 'Azgw.f7NYjBAlDQEpbI1D06D4ACAAXfoVSV7k4JUuGAPRHzhDbQR2r90',
-                    'sandbox' => true
-                )))
             ),
             'storages' => array(
                 'paypal' => array(
-                    'Payum\Paypal\ExpressCheckout\Nvp\Model\PaymentDetails' => new FilesystemStorage(
-                        __DIR__.'/../data',
-                        'Payum\Paypal\ExpressCheckout\Nvp\Model\PaymentDetails'
-                    ),
-                ),
-                'paypal-active-record-storage' => array(
                     'PaymentDetails' => new FilesystemStorage(__DIR__.'/../data', 'PaymentDetails'),
                 ),
             )

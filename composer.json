@@ -50,8 +50,7 @@
         "yiiext/migrate-command":"dev-master#35f315b as 0.7.2.1",
         "yiisoft/yii":"1.1.14",
         "payum/payum": "0.7.*@dev",
-        "payum/payum-yii-extension": "0.7.*@dev",
-        "payum/paypal-express-checkout-nvp": "0.7.*@dev"
+        "payum/payum-yii-extension": "0.7.*@dev"
     },
     "require-dev":{
         "cloudhead/less.js":"1.3.*",

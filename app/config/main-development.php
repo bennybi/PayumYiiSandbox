@@ -57,12 +57,12 @@ return array(
         'log'      => array(
             'class'  => 'CLogRouter',
             'routes' => array(
-                // Yii debug toolbar
-                array(
-                    'class'     => 'vendor.malyshev.yii-debug-toolbar.yii-debug-toolbar.YiiDebugToolbarRoute',
-                    'ipFilters' => array('127.0.0.1'),
-                    'enabled'   => true,
-                ),
+//                // Yii debug toolbar
+//                array(
+//                    'class'     => 'vendor.malyshev.yii-debug-toolbar.yii-debug-toolbar.YiiDebugToolbarRoute',
+//                    'ipFilters' => array('127.0.0.1'),
+//                    'enabled'   => true,
+//                ),
                 // file logging
                 array(
                     'class' => 'CFileLogRoute',

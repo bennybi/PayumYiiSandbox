@@ -9,7 +9,7 @@ class PaypalController extends CController
 
         $tokenStorage = $payum->getTokenStorage();
         $paymentDetailsStorage = $payum->getRegistry()->getStorageForClass(
-            'Payum\Paypal\ExpressCheckout\Nvp\Model\PaymentDetails',
+            'PaymentDetails',
             $paymentName
         );
 
@@ -47,7 +47,7 @@ class PaypalController extends CController
         $token = $this->getPayum()->getHttpRequestVerifier()->verify($_REQUEST);
         $payment = $this->getPayum()->getRegistry()->getPayment($token->getPaymentName());
 
-        $payment->execute($status = new \Payum\Request\BinaryMaskStatusRequest($token));
+        $payment->execute($status = new \Payum\Core\Request\BinaryMaskStatusRequest($token));
 
         $content = '';
         if ($status->isSuccess()) {
